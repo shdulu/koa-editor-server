@@ -6,18 +6,18 @@
 module.exports = {
     // mysql 连接配置
     mysqlConf: {
-        host: 'localhost',
+        host: '127.0.0.1',
         user: 'root',
         password: 'root',
         port: '3306',
-        database: 'logo_editor_server',
+        database: 'editor_server',
     },
 
     // mongodb 连接配置
     mongodbConf: {
         host: '127.0.0.1',
         port: '27017',
-        dbName: 'test',
+        dbName: 'logo-editor-server',
     },
 
     // redis 连接配置
