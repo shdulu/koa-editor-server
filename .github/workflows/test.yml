@@ -1,0 +1,33 @@
+# 文档地址 https://docs.github.com/cn/actions/quickstart
+
+name: test
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - '.github/workflows/**'
+            - '__test__/**'
+            - 'src/**'
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps: # 步骤
+            - uses: actions/checkout@v2 # git pull， 第三方actions
+            - name: Use Node.js
+              uses: actions/setup-node@v1 # 安装nodejs
+              with:
+                  node-version: 14 # 使用版本
+            - name: print node version
+              run: |
+                  node -v
+                  npm -v
+
+    test2:
+        runs-on: ubuntu-latest
+        steps:
+            - run: touch a.txt
+            - run: echo 100 > a.txt
+            - run: cat a.txt
