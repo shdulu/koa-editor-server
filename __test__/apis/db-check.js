@@ -12,4 +12,4 @@ test('数据库连接', async done => {
     expect(redisConn).toBe(true)
     expect(mysqlConn).toBe(true)
     expect(mongodbConn).toBe(true)
-}, 10000)
+}, 50000)
