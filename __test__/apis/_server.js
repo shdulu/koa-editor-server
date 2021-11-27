@@ -1,8 +1,3 @@
-/**
- * @description jest server
- * @author 双越老师
- */
-
 const axios = require('axios')
 const supertest = require('supertest')
 const { isTestRemote, isTestLocal } = require('../../src/utils/env')
@@ -18,7 +13,7 @@ if (isTestLocal) {
 let TOKEN = ''
 
 // 测试机 host
-const REMOTE_HOST = 'http://182.92.xxx.xxx:8081' // TODO 待定
+const REMOTE_HOST = 'http://192.168.199.240:3000' // TODO 待定
 
 /**
  * 发送请求

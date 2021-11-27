@@ -1,6 +1,5 @@
 /**
  * @description 同步数据库，以修改数据表的方式，不会清空数据，比较安全
- * @author
  */
 
 const path = require('path')

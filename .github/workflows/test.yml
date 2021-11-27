@@ -5,7 +5,7 @@ name: test
 on:
     push:
         branches:
-            - main
+            - develop
         paths:
             - '.github/workflows/**'
             - '__test__/**'
@@ -13,21 +13,15 @@ on:
 
 jobs:
     test:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-latest # ?? Ubuntu 是基于 Debian 的 Linux 操作系统。
         steps: # 步骤
             - uses: actions/checkout@v2 # git pull， 第三方actions
             - name: Use Node.js
               uses: actions/setup-node@v1 # 安装nodejs
               with:
                   node-version: 14 # 使用版本
-            - name: print node version
-              run: |
-                  node -v
-                  npm -v
-
-    test2:
-        runs-on: ubuntu-latest
-        steps:
-            - run: touch a.txt
-            - run: echo 100 > a.txt
-            - run: cat a.txt
+            - name: lint an test
+              run: | # 安装依赖 代码检查 远程测试
+                  npm install
+                  npm run lint 
+                  npm run test:remote
