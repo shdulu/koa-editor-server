@@ -19,7 +19,7 @@ jobs:
             - name: Use Node.js
               uses: actions/setup-node@v1 # 安装nodejs
               with:
-                  node-version: 14 # 使用版本
+                  node-version: 12 # 使用版本
             - name: lint an test
               run: | # 安装依赖 代码检查 远程测试
                   npm install

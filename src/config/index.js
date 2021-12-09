@@ -1,8 +1,3 @@
-/**
- * @description 配置项
- * @author 双越
- */
-
 const { isPrd, isPrdDev } = require('../utils/env')
 
 // 获取各个环境的不同配置文件

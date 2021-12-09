@@ -1,12 +1,7 @@
-/**
- * @description dev 配置
- * @author 双越
- */
-
 module.exports = {
     // mysql 连接配置
     mysqlConf: {
-        host: '127.0.0.1',
+        host: 'localhost',
         user: 'root',
         password: 'root',
         port: '3306',
@@ -15,7 +10,7 @@ module.exports = {
 
     // mongodb 连接配置
     mongodbConf: {
-        host: '127.0.0.1',
+        host: 'localhost',
         port: '27017',
         dbName: 'logo-editor-server',
     },
