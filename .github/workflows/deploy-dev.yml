@@ -35,7 +35,7 @@ jobs:
                   username: root # 登录名
                   password: ad990705@ # 密码
                   port: 80 # 端口
-              run: |
+              script: |
                   docker-compose build editor-server
                   docker-compose up -d
                    # ssh work@47.104.239.122 "
@@ -48,5 +48,5 @@ jobs:
                    #   docker-compose build editor-server; # 和 docker-compose.yml service 名字一致
                    #   docker-compose up -d;
                    # "
-            - name: delete ssh key # 删除 ssh key
-              run: rm -rf ~/.ssh/id_rsa
+            # - name: delete ssh key # 删除 ssh key
+            #   run: rm -rf ~/.ssh/id_rsa
