@@ -19,40 +19,30 @@ on:
 jobs:
     deploy-develop:
         runs-on: ubuntu-latest
-        # 进入自动化步骤
+
         steps:
             - uses: actions/checkout@v2
-            # - name: set ssh key # 临时设置 ssh key
-            #   run: |
-            #       mkdir -p ~/.ssh/
-            #       echo "${{secrets.WFP_ID_RSA}}" > ~/.ssh/id_rsa
-            #       chmod 600 ~/.ssh/id_rsa
-            #       ssh-keyscan "47.104.239.122" >> ~/.ssh/known_hosts
+            - name: set ssh key # 临时设置 ssh key
+              run: |
+                  mkdir -p ~/.ssh/
+                  echo "${{secrets.WFP_ID_RSA}}" > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan "47.104.239.122" >> ~/.ssh/known_hosts
             - name: deploy # 部署
-              uses: appleboy/ssh-action@master
-              with:
-                  host: 47.104.239.122 # 公网 IP 或 域名
-                  username: root # 登录名
-                  password: ad990705@ # 密码
-                  port: 80 # 端口
-                  script: |
-                      cd /home/work/sudu-logo/koa-editor-server
-                      git remote add origin https://shdulu:${{secrets.WFP_PASSWORD}}@github.com/shdulu/koa-editor-server.git
-                      git checkout develop
-                      git pull origin develop
-                      git remote remove origin
-                      # 启动 docker
-                      docker-compose build editor-server
-                      docker-compose up -d
-                  # ssh work@47.104.239.122 "
-                  #   cd /home/work/sudu-logo/koa-editor-server;
-                  #   git remote add origin https://shdulu:${{secrets.WFP_PASSWORD}}@github.com/shdulu/koa-editor-server.git;
-                  #   git checkout develop;
-                  #   git pull origin develop; # 重新下载最新代码
-                  #   git remote remove origin; # 删除 origin ，否则会暴露 github 密码
-                  #   # 启动 docker
-                  #   docker-compose build editor-server; # 和 docker-compose.yml service 名字一致
-                  #   docker-compose up -d;
-                  # "
-            # - name: delete ssh key # 删除 ssh key
-            #   run: rm -rf ~/.ssh/id_rsa
+              run: |
+                  ssh work@47.104.239.122 "
+                    # 【注意】用 work 账号登录，手动创建 /home/work/sudu-logo 目录
+                    # 然后 git clone https://shdulu:shdulu990705@github.com/shdulu/koa-editor-server.git -b develop （私有仓库，使用 github 用户名和密码）
+                    # 记得删除 origin ，否则会暴露 github 密码
+
+                    cd /home/work/sudu-logo/koa-editor-server;
+                    git remote add origin https://shdulu:${{secrets.WFP_PASSWORD}}@github.com/shdulu/koa-editor-server.git;
+                    git checkout develop;
+                    git pull origin develop; # 重新下载最新代码
+                    git remote remove origin; # 删除 origin ，否则会暴露 github 密码
+                    # 启动 docker
+                    docker-compose build editor-server; # 和 docker-compose.yml service 名字一致
+                    docker-compose up -d;
+                  "
+            - name: delete ssh key # 删除 ssh key
+              run: rm -rf ~/.ssh/id_rsa
