@@ -30,7 +30,8 @@ jobs:
                   ssh-keyscan "47.104.239.122" >> ~/.ssh/known_hosts
             - name: deploy # 部署
               run: |
-                  ssh work@47.104.239.122 "
+
+                  ssh -i ~/.ssh/id_rsa work@47.104.239.122 "
                     cd /home/work/sudu-logo/koa-editor-server;
                     git remote add origin https://shdulu:shdulu990705@github.com/shdulu/koa-editor-server.git;
                     git checkout develop;
