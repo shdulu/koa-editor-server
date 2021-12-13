@@ -1,8 +1,3 @@
-/**
- * @description 跨域 中间件
- * @author 双越
- */
-
 const cors = require('koa2-cors')
 const { corsOrigin } = require('../config/index')
 

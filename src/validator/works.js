@@ -1,8 +1,3 @@
-/**
- * @description 数据校验 作品
- * @author 双越
- */
-
 // 普通字符串的规则
 const strRule = {
     type: 'string',

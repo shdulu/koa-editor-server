@@ -1,9 +1,4 @@
 /**
- * @description res model
- * @author 双越老师
- */
-
-/**
  * 基础模型，包括 errno data 和 message
  */
 class BaseRes {

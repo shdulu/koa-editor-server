@@ -1,8 +1,3 @@
-/**
- * @description user model
- * @author 双越
- */
-
 const seq = require('../db/seq/seq')
 const { STRING, DATE, BOOLEAN } = require('../db/seq/types')
 

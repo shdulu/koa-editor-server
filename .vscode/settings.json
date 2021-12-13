@@ -1,6 +1,4 @@
 {
-  "editor.formatOnSave": true,
-  "cSpell.words": [
-    "aliyun"
-  ]
+    "editor.formatOnSave": true,
+    "cSpell.words": ["aliyun"]
 }

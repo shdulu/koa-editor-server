@@ -1,8 +1,3 @@
-/**
- * @description 登录校验
- * @author 双越
- */
-
 const { jwtVerify } = require('../utils/jwt')
 const { ErrorRes } = require('../res-model/index')
 const { loginCheckFailInfo } = require('../res-model/failInfo/index')

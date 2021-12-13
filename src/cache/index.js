@@ -1,8 +1,3 @@
-/**
- * @description 数据缓存
- * @author 双越
- */
-
 const redisClient = require('../db/redis')
 
 /**

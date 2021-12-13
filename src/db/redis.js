@@ -1,8 +1,3 @@
-/**
- * @description 连接 redis
- * @author 双越
- */
-
 const redis = require('redis')
 const { redisConf } = require('../config/index')
 

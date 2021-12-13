@@ -7,4 +7,16 @@ Object.assign(devConf.redisConf, {
     host: 'editor-redis', // docker 容器
 })
 
+// 修改 mongodb 连接配置
+Object.assign(devConf.mongodbConf, {
+    host: 'editor-mongo', // 和 docker-compose 中配置的 service 名字一致
+})
+
+// 修改 mysql 连接配置
+Object.assign(devConf.mysqlConf, {
+    host: 'editor-mysql', // 和 docker-compose 中配置的 service 名字一致
+})
+
+devConf.h5Origin = 'http://47.104.239.122:8081'
+
 module.exports = devConf

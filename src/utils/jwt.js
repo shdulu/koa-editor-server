@@ -1,8 +1,3 @@
-/**
- * @description jwt - verify sign
- * @author 双越
- */
-
 const util = require('util')
 const jwt = require('jsonwebtoken')
 const { JWT_SECRET } = require('../config/constant')

@@ -1,8 +1,3 @@
-/**
- * @description 配置 sequelize ，连接 mysql
- * @author 双越
- */
-
 const Sequelize = require('sequelize')
 const { mysqlConf } = require('../../config/index')
 const { isPrd, isTest } = require('../../utils/env')

@@ -1,8 +1,3 @@
-/**
- * @description 数据校验 users
- * @author 双越
- */
-
 // 手机号规则
 const phoneNumberRule = {
     type: 'string',

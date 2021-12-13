@@ -1,8 +1,3 @@
-/**
- * @description 封装 mongoose ，连接 mongodb
- * @author 双越
- */
-
 const mongoose = require('mongoose')
 const { mongodbConf } = require('../config/index')
 

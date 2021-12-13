@@ -1,8 +1,3 @@
-/**
- * @description 生成 ctx.request.body 格式校验的中间件
- * @author 双越
- */
-
 const Ajv = require('ajv')
 const { ErrorRes } = require('../res-model/index')
 const { validateFailInfo } = require('../res-model/failInfo/index')

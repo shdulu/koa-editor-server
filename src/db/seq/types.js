@@ -1,8 +1,3 @@
-/**
- * @description 封装 sequelize 类型
- * @author 双越
- */
-
 const Sequelize = require('sequelize')
 
 module.exports = {

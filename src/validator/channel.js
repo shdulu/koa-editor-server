@@ -1,8 +1,3 @@
-/**
- * @description 数据校验 channel
- * @author 双越
- */
-
 const strRule = {
     type: 'string',
     maxLength: 255,
